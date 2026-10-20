@@ -1,0 +1,229 @@
+{
+  "payloads": {
+    "hello.txt": 608,
+    "repeat.bin": 4096,
+    "pseudo.bin": 1500
+  },
+  "archives": [
+    {
+      "archive": "t_lz4.lzs",
+      "note": "stored (uncompressed) members",
+      "size": 4772,
+      "members": [
+        {
+          "name": "HELLO.TXT",
+          "method": "-lz4-",
+          "original_size": 608,
+          "compressed_size": 608,
+          "crc16": 57750,
+          "data_offset": 33
+        },
+        {
+          "name": "REPEAT.BIN",
+          "method": "-lz4-",
+          "original_size": 4096,
+          "compressed_size": 4096,
+          "crc16": 8279,
+          "data_offset": 675
+        }
+      ]
+    },
+    {
+      "archive": "t_lz5.lzs",
+      "note": "LZSS 4 KiB window, byte oriented",
+      "size": 2236,
+      "members": [
+        {
+          "name": "HELLO.TXT",
+          "method": "-lz5-",
+          "original_size": 608,
+          "compressed_size": 148,
+          "crc16": 57750,
+          "data_offset": 33
+        },
+        {
+          "name": "REPEAT.BIN",
+          "method": "-lz5-",
+          "original_size": 4096,
+          "compressed_size": 489,
+          "crc16": 8279,
+          "data_offset": 215
+        },
+        {
+          "name": "PSEUDO.BIN",
+          "method": "-lz5-",
+          "original_size": 1500,
+          "compressed_size": 1497,
+          "crc16": 17534,
+          "data_offset": 738
+        }
+      ]
+    },
+    {
+      "archive": "t_lzs.lzs",
+      "note": "LZSS, bit oriented, 2 KiB window (11 bit index + 4 bit length). The bit widths are taken from the extended member header",
+      "size": 2222,
+      "members": [
+        {
+          "name": "HELLO.TXT",
+          "method": "-lzs-",
+          "original_size": 608,
+          "compressed_size": 149,
+          "crc16": 57750,
+          "data_offset": 35
+        },
+        {
+          "name": "REPEAT.BIN",
+          "method": "-lzs-",
+          "original_size": 4096,
+          "compressed_size": 487,
+          "crc16": 8279,
+          "data_offset": 220
+        },
+        {
+          "name": "PSEUDO.BIN",
+          "method": "-lzs-",
+          "original_size": 1500,
+          "compressed_size": 1478,
+          "crc16": 17534,
+          "data_offset": 743
+        }
+      ]
+    },
+    {
+      "archive": "t_lz123.lzs",
+      "note": "methods 1, 2 and 3: one and the same bit oriented LZSS decoder, only the level parameters in the header differ",
+      "size": 2271,
+      "members": [
+        {
+          "name": "HELLO.TXT",
+          "method": "-lz1-",
+          "original_size": 608,
+          "compressed_size": 149,
+          "crc16": 57750,
+          "data_offset": 35
+        },
+        {
+          "name": "REPEAT.BIN",
+          "method": "-lz2-",
+          "original_size": 4096,
+          "compressed_size": 517,
+          "crc16": 8279,
+          "data_offset": 220
+        },
+        {
+          "name": "PSEUDO.BIN",
+          "method": "-lz3-",
+          "original_size": 1500,
+          "compressed_size": 1497,
+          "crc16": 17534,
+          "data_offset": 773
+        }
+      ]
+    },
+    {
+      "archive": "t_lz8.lzs",
+      "note": "method 8 carries a -lz5- stream: method 8 uses the same byte oriented LZSS codec as method 5",
+      "size": 705,
+      "members": [
+        {
+          "name": "HELLO.TXT",
+          "method": "-lz8-",
+          "original_size": 608,
+          "compressed_size": 148,
+          "crc16": 57750,
+          "data_offset": 33
+        },
+        {
+          "name": "REPEAT.BIN",
+          "method": "-lz8-",
+          "original_size": 4096,
+          "compressed_size": 489,
+          "crc16": 8279,
+          "data_offset": 215
+        }
+      ]
+    },
+    {
+      "archive": "t_lz7.lzs",
+      "note": "method 7 has no codec: LArc takes the VMA/book path for it and does not even list such an archive",
+      "size": 642,
+      "members": [
+        {
+          "name": "HELLO.TXT",
+          "method": "-lz7-",
+          "original_size": 608,
+          "compressed_size": 608,
+          "crc16": 57750,
+          "data_offset": 33
+        }
+      ]
+    },
+    {
+      "archive": "t_mixed.lzs",
+      "note": "all supported methods in one archive",
+      "size": 5826,
+      "members": [
+        {
+          "name": "HELLO.TXT",
+          "method": "-lz5-",
+          "original_size": 608,
+          "compressed_size": 148,
+          "crc16": 57750,
+          "data_offset": 33
+        },
+        {
+          "name": "REPEAT.BIN",
+          "method": "-lz4-",
+          "original_size": 4096,
+          "compressed_size": 4096,
+          "crc16": 8279,
+          "data_offset": 215
+        },
+        {
+          "name": "PSEUDO.BIN",
+          "method": "-lzs-",
+          "original_size": 1500,
+          "compressed_size": 1478,
+          "crc16": 17534,
+          "data_offset": 4347
+        }
+      ]
+    },
+    {
+      "archive": "t_native.lzs",
+      "note": "same policy as LArc itself (compressed if it is smaller)",
+      "size": 705,
+      "members": [
+        {
+          "name": "HELLO.TXT",
+          "method": "-lz5-",
+          "original_size": 608,
+          "compressed_size": 148,
+          "crc16": 57750,
+          "data_offset": 33
+        },
+        {
+          "name": "REPEAT.BIN",
+          "method": "-lz5-",
+          "original_size": 4096,
+          "compressed_size": 489,
+          "crc16": 8279,
+          "data_offset": 215
+        }
+      ]
+    },
+    {
+      "archive": "t_badhdr.lzs",
+      "note": "header checksum deliberately wrong",
+      "size": 182,
+      "members": []
+    },
+    {
+      "archive": "t_badcrc.lzs",
+      "note": "member CRC-16 deliberately wrong",
+      "size": 182,
+      "members": []
+    }
+  ]
+}
